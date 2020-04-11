@@ -1,0 +1,13 @@
+KAFKA_SERVER: kafka-service
+KAFKA_PORT: 9092
+
+server: 
+  port: 8080
+
+kafka:
+  tunnel:
+    group: tunnelGroup
+  bootstrap-servers: ${KAFKA_SERVER:kafka-service}:${KAFKA_PORT:9092}
+  topic:
+    producer: topic-sub
+    consumer: topic-pub
